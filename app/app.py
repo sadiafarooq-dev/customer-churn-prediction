@@ -6,8 +6,11 @@ import shap
 import matplotlib.pyplot as plt
 
 # Load model and features
-model = joblib.load('model.pkl')
-features = joblib.load('features.pkl')
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, 'model.pkl'))
+features = joblib.load(os.path.join(BASE_DIR, 'features.pkl'))
 
 # Page config
 st.set_page_config(page_title="Customer Churn Predictor", layout="wide")
